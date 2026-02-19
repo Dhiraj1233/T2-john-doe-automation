@@ -20,7 +20,7 @@ public class GeneratorPagePom
 	    @FindBy(xpath = "//input[@placeholder='Enter internal account number']")
 	    private WebElement accNo;
 
-	    @FindBy(xpath = "//button[@type='submit']")
+	    @FindBy(xpath = "//button[@id='generator-status']/../../../button")
 	    private WebElement submitBtn;
 
 	    public GeneratorPagePom(WebDriver driver) 

@@ -84,23 +84,28 @@ public class GeneratorDetailsPagePom {
 	@FindBy(xpath = "(//span[@class='w-1/4 flex items-center justify-center'])[1]")
 	private WebElement copyMonday;
 
-	@FindBy(xpath = "(//span[@class='w-1/4 flex items-center justify-center'])[2]")
+	@FindBy(xpath = "(//span[@class='w-1/4 flex items-center justify-center'])[4]")
 	private WebElement pasteTue;
 
-	@FindBy(xpath = "(//span[@class='w-1/4 flex items-center justify-center'])[3]")
+	@FindBy(xpath = "(//span[@class='w-1/4 flex items-center justify-center'])[6]")
 	private WebElement pasteWed;
 
-	@FindBy(xpath = "(//span[@class='w-1/4 flex items-center justify-center'])[4]")
+	@FindBy(xpath = "(//span[@class='w-1/4 flex items-center justify-center'])[8]")
 	private WebElement pasteThu;
 
-	@FindBy(xpath = "(//span[@class='w-1/4 flex items-center justify-center'])[5]")
+	@FindBy(xpath = "(//span[@class='w-1/4 flex items-center justify-center'])[10]")
 	private WebElement pasteFri;
 
-	@FindBy(xpath = "(//div[contains(@class,'cursor-pointer min-w-[26px]')])[6]")
+	@FindBy(xpath = "(//span[@class='w-1/2 flex items-center justify-center'])[6]")
 	private WebElement saturdayClose;
 
-	@FindBy(xpath = "(//div[contains(@class,'cursor-pointer min-w-[26px]')])[7]")
+	@FindBy(xpath = "(//span[@class='w-1/2 flex items-center justify-center'])[7]")
 	private WebElement sundayClose;
+
+	@FindBy(xpath = "(//div[@role='checkbox']/div)[1]")
+	private WebElement contractedBtn;
+	@FindBy(xpath = "//div[@class='modal-box']/div[3]/button[2]")
+	private WebElement cnfBtn;
 
 	public GeneratorDetailsPagePom(WebDriver driver)
 	{
@@ -153,5 +158,13 @@ public class GeneratorDetailsPagePom {
 		pasteFri.click();
 		saturdayClose.click();
 		sundayClose.click();
+	}
+	public WebElement contbtn()
+	{
+		return	contractedBtn;
+	}
+	public WebElement cnfBtn()
+	{
+		return cnfBtn;
 	}
 }

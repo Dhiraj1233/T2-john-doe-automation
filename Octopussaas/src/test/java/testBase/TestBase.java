@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -15,7 +16,9 @@ public class TestBase
 	@BeforeMethod
 	public void setUp()
 	{
-		driver = new ChromeDriver();
+		ChromeOptions opt = new ChromeOptions();
+		opt.addArguments("--disable-notifications");
+		driver = new ChromeDriver(opt);
 		driver.manage().window().maximize();
 		driver.get("https://dev.octopussaas.com/auth");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
@@ -30,7 +33,7 @@ public class TestBase
 			e.printStackTrace();
 
 		}
-		driver.quit();
+		//driver.quit();
 	}
 
 }

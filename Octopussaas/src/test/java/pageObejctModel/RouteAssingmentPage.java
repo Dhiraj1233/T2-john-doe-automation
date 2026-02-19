@@ -7,8 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 
 public class RouteAssingmentPage 
 {
-
-    @FindBy(xpath = "//button[text()='...']")
+	@FindBy(xpath = "//*[@id=\"explainer-portal\"]/div/button/svg")
+	private WebElement popop;
+    @FindBy(xpath = "(//div[@class=\"relative inline-block\"]/button)[2]")
     private WebElement threeDots;
 
     @FindBy(xpath = "//button[text()='Route Assignment']")
@@ -35,9 +36,16 @@ public class RouteAssingmentPage
     public RouteAssingmentPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
-
+    public void popup()
+    {
+    	popop.click();
+    }
+    public WebElement threedots()
+    {
+    	return threeDots;
+    }
     public void assignRoute() {
-        threeDots.click();
+        
         routeAssignment.click();
         addService.click();
         routeInput.sendKeys("Raju");
