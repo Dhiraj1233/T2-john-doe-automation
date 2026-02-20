@@ -11,6 +11,8 @@ import org.testng.annotations.Test;
 import pageObejctModel.GeneratorDetailsPagePom;
 import pageObejctModel.GeneratorPagePom;
 import pageObejctModel.LoginPagePom;
+import pageObejctModel.LogoutPage;
+import pageObejctModel.PriceBookPage;
 import pageObejctModel.RouteAssingmentPage;
 import testBase.TestBase;
 
@@ -46,6 +48,7 @@ public class TestCase001 extends TestBase
 		//Route Assingment
 		RouteAssingmentPage rap=new RouteAssingmentPage(driver);
 		try {
+			driver.switchTo().alert().dismiss();
 			rap.popup();
 		} catch (Exception e) {
 			System.out.println("Popup not displayed or already closed");
@@ -56,5 +59,14 @@ public class TestCase001 extends TestBase
 			e.printStackTrace();
 		}
 		System.out.println("==========Route Assinged==============");
+		//price book
+		PriceBookPage pp=new PriceBookPage(driver);
+		pp.priceBook();
+		System.out.println("=========Price book Completed==========");
+		
+		//Logout Actions
+		LogoutPage lg= new LogoutPage(driver);
+		lg.logoutAction();
+		System.out.println("==========Logout Done==========");
 	}
 }
